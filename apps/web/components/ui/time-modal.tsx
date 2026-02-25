@@ -97,6 +97,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
                   variant={hour === h ? "default" : "outline"}
                   onClick={() => setHour(h)}
                   className="h-10"
+                  aria-label={`${h} o'clock`}
                 >
                   {h}
                 </Button>
@@ -115,6 +116,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
                   variant={minute === m ? "default" : "outline"}
                   onClick={() => setMinute(m)}
                   className="h-10"
+                  aria-label={`${m} minutes`}
                 >
                   {m.toString().padStart(2, "0")}
                 </Button>
@@ -131,6 +133,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
                 variant={ampm === "AM" ? "default" : "outline"}
                 onClick={() => setAmpm("AM")}
                 className="h-10"
+                aria-label="AM period"
               >
                 AM
               </Button>
@@ -139,6 +142,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
                 variant={ampm === "PM" ? "default" : "outline"}
                 onClick={() => setAmpm("PM")}
                 className="h-10"
+                aria-label="PM period"
               >
                 PM
               </Button>
