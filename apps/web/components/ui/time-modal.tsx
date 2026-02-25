@@ -10,6 +10,11 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
+// Constants
+const DEFAULT_TIME = "09:00 AM";
+const HOURS = Array.from({ length: 12 }, (_, i) => i + 1);
+const MINUTES = [0, 15, 30, 45];
+
 interface TimeModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -17,43 +22,61 @@ interface TimeModalProps {
   onSave: (value: string) => void;
 }
 
-export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps) {
-  // Parse value in format "HH:MM AM/PM"
-  const parseValue = (val: string) => {
-    if (!val) return { hour: 9, minute: 0, ampm: "AM" as "AM" | "PM" };
-    const [time, ampm] = val.split(" ");
-    const [hour, minute] = time.split(":");
-    return { hour: parseInt(hour), minute: parseInt(minute), ampm: ampm as "AM" | "PM" };
-  };
+// Parse time value in format "HH:MM AM/PM"
+const parseValue = (val: string): { hour: number; minute: number; ampm: "AM" | "PM" } => {
+  if (!val) return { hour: 9, minute: 0, ampm: "AM" };
 
-  const { hour: initialHour, minute: initialMinute, ampm: initialAmpm } = parseValue(value || "09:00 AM");
+  try {
+    const parts = val.trim().split(" ");
+    if (parts.length < 2) return { hour: 9, minute: 0, ampm: "AM" };
+
+    const [time, ampm] = parts;
+    const timeParts = time.split(":");
+
+    if (timeParts.length !== 2) return { hour: 9, minute: 0, ampm: "AM" };
+
+    const hour = parseInt(timeParts[0], 10);
+    const minute = parseInt(timeParts[1], 10);
+
+    // Validate values
+    if (isNaN(hour) || isNaN(minute)) return { hour: 9, minute: 0, ampm: "AM" };
+
+    return {
+      hour: Math.max(1, Math.min(12, hour)),
+      minute: Math.max(0, Math.min(59, minute)),
+      ampm: ampm === "PM" ? "PM" : "AM",
+    };
+  } catch {
+    return { hour: 9, minute: 0, ampm: "AM" };
+  }
+};
+
+export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps) {
+  const { hour: initialHour, minute: initialMinute, ampm: initialAmpm } = parseValue(value || DEFAULT_TIME);
 
   const [hour, setHour] = React.useState(initialHour);
   const [minute, setMinute] = React.useState(initialMinute);
   const [ampm, setAmpm] = React.useState<"AM" | "PM">(initialAmpm);
 
-  // Reset state when value prop changes and modal is closed
+  // Reset state when modal opens
   React.useEffect(() => {
-    if (!open && value) {
-      const { hour, minute, ampm } = parseValue(value);
-      setHour(hour);
-      setMinute(minute);
-      setAmpm(ampm);
+    if (open) {
+      const { hour: newHour, minute: newMinute, ampm: newAmpm } = parseValue(value || DEFAULT_TIME);
+      setHour(newHour);
+      setMinute(newMinute);
+      setAmpm(newAmpm);
     }
-  }, [value, open]);
+  }, [open, value]);
 
-  const handleSave = () => {
+  const handleSave = React.useCallback(() => {
     const formattedTime = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")} ${ampm}`;
     onSave(formattedTime);
     onOpenChange(false);
-  };
+  }, [hour, minute, ampm, onSave, onOpenChange]);
 
-  const handleCancel = () => {
+  const handleCancel = React.useCallback(() => {
     onOpenChange(false);
-  };
-
-  const hours = Array.from({ length: 12 }, (_, i) => i + 1);
-  const minutes = [0, 15, 30, 45];
+  }, [onOpenChange]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -67,7 +90,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">Hour</label>
             <div className="grid grid-cols-4 gap-2">
-              {hours.map((h) => (
+              {HOURS.map((h) => (
                 <Button
                   key={h}
                   type="button"
@@ -85,7 +108,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">Minute</label>
             <div className="grid grid-cols-4 gap-2">
-              {minutes.map((m) => (
+              {MINUTES.map((m) => (
                 <Button
                   key={m}
                   type="button"
@@ -124,7 +147,7 @@ export function TimeModal({ open, onOpenChange, value, onSave }: TimeModalProps)
 
           {/* Preview */}
           <div className="bg-slate-50 rounded-lg p-4 text-center">
-            <div className="text-2xl font-semibold text-slate-900">
+            <div className="text-2xl font-semibold text-slate-900" aria-live="polite">
               {hour.toString().padStart(2, "0")}:{minute.toString().padStart(2, "0")} {ampm}
             </div>
           </div>
