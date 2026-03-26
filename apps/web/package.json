@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "npx @react-grab/claude-code@latest && next dev --port ${FRONTEND_PORT:-3000}",
-    "build": "next build",
+    "postinstall": "prisma generate",
+    "build": "prisma generate && next build",
     "start": "next start --port ${FRONTEND_PORT:-3000}",
     "lint": "eslint --max-warnings 0",
-    "check-types": "next typegen && tsc --noEmit"
+    "check-types": "prisma generate && next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
