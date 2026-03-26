@@ -1,0 +1,205 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Sparkles, Loader2 } from "lucide-react";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import { Service } from "@/lib/data/store";
+
+export function Services() {
+    const [services, setServices] = useState<Service[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const res = await fetch("/api/data?section=services");
+                const data = await res.json();
+                if (data.data) {
+                    // Sort by order and filter active
+                    const sorted = data.data
+                        .filter((s: Service) => s.isActive)
+                        .sort((a: Service, b: Service) => a.order - b.order);
+                    setServices(sorted);
+                }
+            } catch (error) {
+                console.error("Failed to load services:", error);
+            }
+            setIsLoading(false);
+        };
+        fetchServices();
+    }, []);
+
+    if (isLoading) {
+        return (
+            <section id="services" className="py-24 bg-slate-50">
+                <div className="container mx-auto px-4 md:px-6 flex justify-center">
+                    <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+                </div>
+            </section>
+        );
+    }
+
+    if (services.length === 0) {
+        return null;
+    }
+
+    return (
+        <section id="services" className="py-24 bg-slate-50">
+            <div className="container mx-auto px-4 md:px-6">
+
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3">Services & Treatments</h2>
+                        <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                            Comprehensive Eye Services
+                        </h3>
+                        <p className="text-slate-600 text-lg leading-relaxed">
+                            From basic check-ups to complex surgeries, we provide a full spectrum of eye care
+                            with technology and expertise you can trust.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* Services Marquee Slider */}
+                <div className="relative w-full overflow-hidden py-10 my-4">
+                    <style dangerouslySetInnerHTML={{
+                        __html: `
+                        @keyframes marquee-services-scroll {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                        }
+                        .marquee-services-content {
+                            animation: marquee-services-scroll 35s linear infinite;
+                        }
+                        .marquee-services-content:hover {
+                            animation-play-state: paused;
+                        }
+                        .marquee-services-paused {
+                            animation-play-state: paused !important;
+                        }
+                    `}} />
+
+                    <div
+                        className={`flex w-max marquee-services-content ${isModalOpen ? 'marquee-services-paused' : ''}`}
+                    >
+                        {/* Duplicate the list twice for seamless loop */}
+                        {[0, 1].map((copyIndex) => (
+                            <div key={copyIndex} className="flex gap-4 md:gap-8 shrink-0 pr-4 md:pr-8">
+                                {services.map((service) => (
+                                    <div
+                                        key={`${copyIndex}-${service.id}`}
+                                        className="group bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col sm:flex-row w-[320px] sm:w-[550px] lg:w-[700px] shrink-0"
+                                    >
+                                        {/* Image */}
+                                        <div className="relative sm:w-2/5 shrink-0 overflow-hidden bg-slate-100 min-h-[200px] sm:min-h-full">
+                                            <img
+                                                src={service.image}
+                                                alt={service.title}
+                                                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
+
+                                        {/* Info */}
+                                        <div className="p-6 md:p-8 flex flex-col grow">
+                                            <h4 className="text-xl font-bold text-slate-900 leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                                                {service.title}
+                                            </h4>
+                                            <p className="text-sm font-semibold text-blue-600 mb-6 grow">
+                                                {service.description}
+                                            </p>
+
+                                            <div className="mt-auto pt-4 border-t border-slate-50 flex flex-col gap-3">
+                                                <Dialog onOpenChange={setIsModalOpen}>
+                                                    <DialogTrigger asChild>
+                                                        <button className="block w-full text-center bg-white border-2 border-slate-200 hover:border-blue-600 hover:text-blue-600 font-semibold py-2.5 rounded-xl transition-all">
+                                                            Learn More
+                                                        </button>
+                                                    </DialogTrigger>
+                                                    <DialogContent className="w-[90vw] max-w-[90vw] sm:max-w-[90vw] md:max-w-[90vw] p-0 overflow-hidden bg-white rounded-3xl">
+                                                        <div className="flex flex-col md:flex-row h-full max-h-[90vh]">
+                                                            {/* Image Section */}
+                                                            <div className="relative w-full md:w-1/2 h-48 md:h-auto bg-slate-100 shrink-0">
+                                                                <img
+                                                                    src={service.image}
+                                                                    alt={service.title}
+                                                                    className="absolute inset-0 w-full h-full object-cover object-center"
+                                                                />
+                                                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent md:bg-none" />
+                                                            </div>
+
+                                                            {/* Content Section */}
+                                                            <div className="w-full md:w-1/2 p-6 md:p-10 lg:p-12 overflow-y-auto">
+                                                                <DialogHeader className="mb-6 text-left">
+                                                                    <div className="flex items-center gap-4 mb-4">
+                                                                        <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center shrink-0">
+                                                                            <Sparkles size={24} />
+                                                                        </div>
+                                                                        <div>
+                                                                            <h4 className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-1">Service Details</h4>
+                                                                            <DialogTitle className="text-2xl md:text-3xl font-bold text-slate-900">
+                                                                                {service.title}
+                                                                            </DialogTitle>
+                                                                        </div>
+                                                                    </div>
+                                                                    <DialogDescription className="text-base text-slate-600">
+                                                                        {service.description}
+                                                                    </DialogDescription>
+                                                                </DialogHeader>
+
+                                                                <div className="space-y-8">
+                                                                    <div>
+                                                                        <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                                                                            About Treatment
+                                                                        </h4>
+                                                                        <p className="text-slate-600 leading-relaxed">
+                                                                            {service.details}
+                                                                        </p>
+                                                                    </div>
+
+                                                                    {service.price && (
+                                                                        <div className="pt-4 border-t border-slate-100">
+                                                                            <p className="text-sm text-slate-500 mb-1">Estimated Price</p>
+                                                                            <p className="text-xl font-bold text-blue-600">{service.price}</p>
+                                                                        </div>
+                                                                    )}
+
+                                                                    <div className="pt-8 border-t border-slate-100 mt-auto">
+                                                                        <DialogTrigger asChild>
+                                                                            <button className="flex items-center justify-center w-full bg-slate-100 hover:bg-slate-200 text-slate-700 py-4 rounded-xl font-semibold transition-all">
+                                                                                Close
+                                                                            </button>
+                                                                        </DialogTrigger>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </DialogContent>
+                                                </Dialog>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    );
+}

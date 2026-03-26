@@ -1,0 +1,292 @@
+"use client";
+
+import { useState, useCallback, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { Star, Quote, Loader2 } from "lucide-react";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Autoplay from "embla-carousel-autoplay";
+
+interface Review {
+    id: number;
+    name: string;
+    rating: number;
+    text: string;
+    date: string;
+}
+
+interface ReviewsSettings {
+    subtitle: string;
+    title: string;
+    description: string;
+}
+
+const REVIEWS = [
+    {
+        id: 1,
+        name: "Mohd Fadzil",
+        rating: 5,
+        text: "Very successful Lasik surgery. The treatment from the doctors and nurses was very satisfactory from the first day of consultation until the surgery was completed. My vision is now 20/20 clear!",
+        date: "14 Feb 2026",
+    },
+    {
+        id: 2,
+        name: "Siti Aminah",
+        rating: 5,
+        text: "Brought my mother for cataract treatment. The doctor explained the process very clearly and calmed my mother who was initially scared. The process was fast and painless. Thank you Eye Specialist Center.",
+        date: "28 Jan 2026",
+    },
+    {
+        id: 3,
+        name: "Johnathan Lee",
+        rating: 5,
+        text: "Highly recommended eye specialist center! The facility is top-notch, clean and modern. Dr. Rajesh is very professional in treating my glaucoma. Staff is helpful and scheduling is easy.",
+        date: "10 Jan 2026",
+    },
+    {
+        id: 4,
+        name: "Nurul Hidayah",
+        rating: 4,
+        text: "Dry eye treatment with IPL therapy is effective. However, the waiting time is a bit long on weekends. Otherwise, the treatment and medication are the best.",
+        date: "05 Dec 2025",
+    },
+    {
+        id: 5,
+        name: "Ahmad Razak",
+        rating: 5,
+        text: "Excellent service! My daughter had strabismus surgery here. The pediatric eye specialist was so patient and gentle. The recovery was smooth and now her eyes are perfectly aligned.",
+        date: "20 Nov 2025",
+    },
+    {
+        id: 6,
+        name: "Priya Sharma",
+        rating: 5,
+        text: "Had my diabetic eye screening here. Very thorough examination and the staff explained everything clearly. Early detection saved my vision. Highly recommend for regular check-ups!",
+        date: "12 Nov 2025",
+    },
+    {
+        id: 7,
+        name: "Tan Wei Ming",
+        rating: 5,
+        text: "Amazing experience with PRK surgery. Dr. Lim was incredibly skilled and the post-op care was excellent. Recovery was smooth and I no longer need glasses after 15 years!",
+        date: "01 Nov 2025",
+    }
+];
+
+export function Reviews() {
+    const [reviewsList, setReviewsList] = useState<Review[]>([]);
+    const [settings, setSettings] = useState<ReviewsSettings | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Fetch reviews and settings from API
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch("/api/data?section=reviews");
+                const data = await res.json();
+                if (data.data) {
+                    setReviewsList(data.data.reviews || []);
+                    setSettings(data.data.settings || DEFAULT_SETTINGS);
+                }
+            } catch (error) {
+                console.error("Failed to load reviews:", error);
+            }
+            setIsLoading(false);
+        };
+        fetchData();
+    }, []);
+
+    // Autoplay plugin with loop
+    const autoplay = useCallback(
+        () => Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }),
+        []
+    );
+
+    // New Review Form State
+    const [newReview, setNewReview] = useState({
+        name: "",
+        rating: 5,
+        text: "",
+    });
+
+    const handleReviewSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        setTimeout(() => {
+            const addedReview = {
+                id: reviewsList.length + 1,
+                name: newReview.name,
+                rating: newReview.rating,
+                text: newReview.text,
+                date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+            };
+
+            // Prepend the new review to the list
+            setReviewsList([addedReview, ...reviewsList]);
+            setIsSubmitting(false);
+            setIsModalOpen(false);
+
+            // Reset form
+            setNewReview({ name: "", rating: 5, text: "" });
+        }, 800);
+    };
+
+    if (isLoading) {
+        return (
+            <section id="reviews" className="py-24 bg-slate-50 border-t border-slate-100">
+                <div className="container mx-auto px-4 md:px-6 flex justify-center">
+                    <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+                </div>
+            </section>
+        );
+    }
+
+    if (!settings) {
+        return null;
+    }
+
+    return (
+        <section id="reviews" className="py-24 bg-slate-50 border-t border-slate-100">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h2 className="text-blue-600 font-bold tracking-wide uppercase text-sm mb-3">{settings.subtitle}</h2>
+                        <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                            {settings.title}
+                        </h3>
+                        <p className="text-slate-600 text-lg leading-relaxed">
+                            {settings.description}
+                        </p>
+                    </motion.div>
+                </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="max-w-6xl mx-auto"
+                >
+                    <Carousel
+                        opts={{ align: "start", loop: true }}
+                        plugins={[autoplay()]}
+                        className="w-full relative"
+                    >
+                        <CarouselContent className="-ml-4">
+                            {reviewsList.map((review) => (
+                                <CarouselItem key={review.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                                    <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 h-full flex flex-col relative overflow-hidden group hover:shadow-lg transition-shadow">
+                                        <Quote className="absolute -top-4 -right-4 text-slate-50 opacity-50 rotate-180" size={100} />
+                                        <div className="flex items-center justify-center gap-1 text-yellow-500 mb-6 relative z-10">
+                                            {[...Array(5)].map((_, i) => (
+                                                <Star key={i} size={18} fill={i < review.rating ? "currentColor" : "none"} className={i >= review.rating ? "text-slate-200" : ""} />
+                                            ))}
+                                        </div>
+                                        <p className="text-slate-700 leading-relaxed mb-8 flex-grow relative z-10 text-center">
+                                            &quot;{review.text}&quot;
+                                        </p>
+                                        <div className="flex flex-col items-center justify-center border-t border-slate-50 pt-6 relative z-10 text-center">
+                                            <h4 className="font-bold text-slate-900">{review.name}</h4>
+                                            <p className="text-xs text-slate-400 mt-1">{review.date}</p>
+                                        </div>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <div className="flex items-center justify-center gap-4 mt-12">
+                            <CarouselPrevious className="static translate-y-0 h-12 w-12 bg-white text-slate-700 hover:text-blue-600 hover:border-blue-200" />
+                            <CarouselNext className="static translate-y-0 h-12 w-12 bg-white text-slate-700 hover:text-blue-600 hover:border-blue-200" />
+                        </div>
+                    </Carousel>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="text-center mt-12"
+                >
+                    <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+                        <DialogTrigger asChild>
+                            <button className="inline-block text-blue-600 font-semibold hover:underline bg-blue-50 hover:bg-blue-100 px-6 py-3 rounded-full transition-colors">
+                                Leave Your Review &rarr;
+                            </button>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px] bg-white">
+                            <DialogHeader>
+                                <DialogTitle className="text-2xl font-bold text-slate-900">Share Your Experience</DialogTitle>
+                            </DialogHeader>
+                            <form onSubmit={handleReviewSubmit} className="space-y-6 mt-4">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
+                                    <Input
+                                        id="name"
+                                        required
+                                        value={newReview.name}
+                                        onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
+                                        placeholder="Ali Bin Abu"
+                                        className="bg-white"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-2">Rating</label>
+                                    <div className="flex gap-2">
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <button
+                                                key={star}
+                                                type="button"
+                                                onClick={() => setNewReview({ ...newReview, rating: star })}
+                                                className="focus:outline-none transition-transform hover:scale-110 active:scale-95"
+                                            >
+                                                <Star
+                                                    size={28}
+                                                    fill={star <= newReview.rating ? "#eab308" : "none"}
+                                                    color={star <= newReview.rating ? "#eab308" : "#cbd5e1"}
+                                                />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="review" className="block text-sm font-medium text-slate-700 mb-2">Your Review</label>
+                                    <Textarea
+                                        id="review"
+                                        required
+                                        value={newReview.text}
+                                        onChange={(e) => setNewReview({ ...newReview, text: e.target.value })}
+                                        placeholder="Tell us about your treatment experience..."
+                                        className="min-h-[120px] bg-white"
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                                >
+                                    {isSubmitting ? "Submitting..." : "Submit Review"}
+                                </button>
+                            </form>
+                        </DialogContent>
+                    </Dialog>
+                </motion.div>
+            </div>
+        </section>
+    );
+}

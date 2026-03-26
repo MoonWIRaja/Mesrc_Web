@@ -1,0 +1,679 @@
+{
+  "hero": {
+    "title": "Melaka Eye Specialist",
+    "subtitle": "& Refractive Centre",
+    "badge": "MESRC",
+    "primaryButtonText": "Book Appointment",
+    "primaryButtonLink": "#appointment",
+    "secondaryButtonText": "Learn More",
+    "secondaryButtonLink": "#about",
+    "backgroundImage": "/uploads/image-1772846970814-obh67z.png",
+    "stats": {
+      "patients": 20000,
+      "experience": 16
+    },
+    "description": "An ophthalmology specialist centre that offers a wide range of diagnostic services and treatments for vision-related problems. We provide comprehensive eye examinations, treatment for various eye diseases, and refractive procedures. With a professional approach and modern equipment, the centre aims to help patients improve their vision quality and ensure their eye health remains at its best.\n",
+    "imageBlur": 4
+  },
+  "about": {
+    "badge": "Get to Know Us",
+    "title": "Melaka Eye Specialist And Refractive Centre",
+    "titleMain": "Melaka Eye Specialist",
+    "titleSub": "& Refractive Centre",
+    "titleMainColor": "#000000",
+    "titleSubColor": "#2563eb",
+    "history": "Melaka Eye Specialist & Refractive Centre (MESRC) is the primary activity of Kayangan Bumi Medical Sdn Bhd (KBMSB), which it was set-up by its founder to provide medical related services. The company was officially registered on December 22, 2009. KBMSB planned for MESRC to be a one-stop centre offering comprehensive medical treatment for eye and visual problems. MESRC became operational in April, 2011.",
+    "mission": "1.To provide quality and comprehensive medical services for eye treatment and visual rehabilitation.\n2.To become the preferred eye treatment and refractive center for the community through appropriate marketing and patient services.\n3.To offer 24-hour services that enable patients to recover from treatment as soon as possible.",
+    "vision": "To provide a centre exclusively for patients with eye problems; available at all times; easily accessible to the community; with reasonable fees. It shall provide safe and skilful medical services with high level of efficiency.",
+    "accreditation": "Licensed by Ministry of Health Malaysia, ISO 9001:2015 Certified, Member of Malaysian Medical Association.",
+    "accreditationItems": [
+      {
+        "title": "Ambulatory Care Centre with Kementerian Kesihatan Malaysia (KKM)",
+        "subtitle": "Since 2009",
+        "icon": "award"
+      },
+      {
+        "title": "With SSM",
+        "subtitle": "Malaysia Standards",
+        "icon": "shield"
+      }
+    ],
+    "image": "/uploads/image-1772847881047-a58j9z.png",
+    "directorName": "KOL (B) DATIN DR. NOR AISHAH BINTI HJ. MALEK",
+    "directorTitle": "FOUNDER"
+  },
+  "ceoMessage": {
+    "hero": {
+      "title": "Your Eyes,",
+      "subtitle": " Our Priority",
+      "badge": "MESRC",
+      "primaryButtonText": "Book Appointment",
+      "primaryButtonLink": "#appointment",
+      "secondaryButtonText": "Learn More",
+      "secondaryButtonLink": "#about",
+      "backgroundImage": "/uploads/image-1771909846201-t1xs2k.jpg",
+      "stats": {
+        "patients": 10000,
+        "experience": 15
+      },
+      "description": "Explore the world with clearer vision. We offer world-class eye medical expertise using the latest t..."
+    },
+    "about": {
+      "badge": "Get to Know Us",
+      "title": "Melaka Eye Specialist And Refractive Centre",
+      "titleMain": "Melaka Eye Specialist ",
+      "titleSub": "And Refractive Centre",
+      "titleMainColor": "#000000",
+      "titleSubColor": "#2563eb",
+      "history": "Established in 2011, Eye Specialist Center started as a small clinic with the goal of providing affordable eye care. Now, after 15 years of service, we have grown into a full-fledged eye specialist hospital equipped with advanced surgical and diagnostic facilities.",
+      "mission": "To provide accessible, high-quality eye care services to all segments of society, utilizing cutting-edge technology and compassionate care.",
+      "vision": "To be the leading eye care provider in the region, known for excellence in patient care, innovation, and community outreach.",
+      "accreditation": "Licensed by Ministry of Health Malaysia, ISO 9001:2015 Certified, Member of Malaysian Medical Association.",
+      "accreditationItems": [
+        {
+          "title": "MSQH Quality Award",
+          "subtitle": "Since 2018",
+          "icon": "award"
+        },
+        {
+          "title": "JCI Accredited",
+          "subtitle": "International Standards",
+          "icon": "shield"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop",
+      "directorName": "Dr. Ahmad Faisal",
+      "directorTitle": "Chief Medical Director"
+    },
+    "doctors": [
+      {
+        "id": "1",
+        "name": "Dr. Liyana Zulkifli",
+        "specialty": "Cataract & Lasik Surgery Specialist",
+        "qualifications": "MD (UKM), MS Ophth (Mal)",
+        "experience": 12,
+        "image": "https://images.unsplash.com/photo-1594824436998-d0832f0c2420?q=80&w=600&auto=format&fit=crop",
+        "bio": "Dr. Liyana specializes in cataract surgery and LASIK procedures with over 12 years of experience.",
+        "isActive": true
+      },
+      {
+        "id": "2",
+        "name": "Dr. Rajesh Kumar",
+        "specialty": "Glaucoma & Neuro-Ophthalmology Specialist",
+        "qualifications": "MBBS (UM), FRCS (Edin)",
+        "experience": 18,
+        "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop",
+        "bio": "Dr. Rajesh is an expert in glaucoma management and neuro-ophthalmology conditions.",
+        "isActive": true
+      },
+      {
+        "id": "3",
+        "name": "Dr. Sarah Mei",
+        "specialty": "Pediatric Ophthalmology Specialist",
+        "qualifications": "MD (USM), Fellowship in Paed Ophth",
+        "experience": 10,
+        "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop",
+        "bio": "Dr. Sarah specializes in children's eye care and strabismus treatment.",
+        "isActive": true
+      },
+      {
+        "id": "4",
+        "name": "Dr. Imran Shafiq",
+        "specialty": "Retina & Macula Specialist",
+        "qualifications": "MBBS (Monash), MS Ophth",
+        "experience": 15,
+        "image": "https://images.unsplash.com/photo-1612349317150-e410f624c427?q=80&w=600&auto=format&fit=crop",
+        "bio": "Dr. Imran is a retina specialist with expertise in diabetic retinopathy and macular degeneration.",
+        "isActive": true
+      }
+    ],
+    "services": [
+      {
+        "id": "1",
+        "title": "Lasik Surgery",
+        "description": "Advanced laser vision correction for freedom from glasses and contact lenses.",
+        "icon": "Eye",
+        "image": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800&auto=format&fit=crop",
+        "features": [
+          "Blade-free technology",
+          "Quick recovery",
+          "Lifetime warranty"
+        ],
+        "isActive": true,
+        "order": 1
+      },
+      {
+        "id": "4",
+        "title": "Pediatric Eye Care",
+        "description": "Specialized eye care for infants, children, and teenagers.",
+        "icon": "Baby",
+        "image": "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=80&w=800&auto=format&fit=crop",
+        "features": [
+          "Lazy eye treatment",
+          "Vision therapy",
+          "School screenings"
+        ],
+        "isActive": true,
+        "order": 4
+      },
+      {
+        "id": "6",
+        "title": "General Eye Check-up",
+        "description": "Comprehensive eye examinations for overall eye health assessment.",
+        "icon": "Stethoscope",
+        "image": "https://images.unsplash.com/photo-1589820760086-1eb8a55ed93d?q=80&w=800&auto=format&fit=crop",
+        "features": [
+          "Full eye exam",
+          "Prescription update",
+          "Eye health screening"
+        ],
+        "isActive": true,
+        "order": 6
+      }
+    ],
+    "promotions": [
+      {
+        "id": "1",
+        "title": "CNY Special: 20% Off Lasik",
+        "description": "Celebrate Chinese New Year with clearer vision! Get 20% off LASIK surgery throughout February 2026.",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+        "discount": "20%",
+        "validUntil": "2026-02-28",
+        "isActive": true
+      }
+    ],
+    "reviews": [
+      {
+        "id": "1",
+        "name": "Mohd Fadzil",
+        "rating": 5,
+        "text": "Very successful Lasik surgery. The treatment from the doctors and nurses was very satisfactory from the first day of consultation until the surgery was completed. My vision is now 20/20 clear!",
+        "date": "14 Feb 2026",
+        "isActive": true
+      },
+      {
+        "id": "2",
+        "name": "Siti Aminah",
+        "rating": 5,
+        "text": "Brought my mother for cataract treatment. The doctor explained the process very clearly and calmed my mother who was initially scared. The process was fast and painless. Thank you Eye Specialist Center.",
+        "date": "10 Feb 2026",
+        "isActive": true
+      },
+      {
+        "id": "3",
+        "name": "Ahmad Razak",
+        "rating": 5,
+        "text": "Professional service and modern equipment. I had a glaucoma screening done here. The doctor was very patient in explaining the condition and treatment options available.",
+        "date": "28 Jan 2026",
+        "isActive": true
+      }
+    ],
+    "contact": {
+      "phone": "+60 3-1234 5678",
+      "whatsapp": "+60 12-345 6789",
+      "email": "info@eyespecialist.com",
+      "address": "Level 5, Specialist Medical Centre, Jalan Medical 1, 50000 Kuala Lumpur, Malaysia",
+      "operatingHours": {
+        "weekdays": "9:00 AM - 6:00 PM",
+        "weekends": "9:00 AM - 1:00 PM"
+      },
+      "socialMedia": {
+        "instagram": "https://instagram.com/eyespecialist",
+        "facebook": "https://facebook.com/eyespecialist",
+        "tiktok": "https://tiktok.com/@eyespecialist"
+      }
+    },
+    "navbar": {
+      "hero": {
+        "title": "Your Eyes,",
+        "subtitle": " Our Priority",
+        "badge": "Trusted Eye Care Center",
+        "primaryButtonText": "Book Appointment",
+        "primaryButtonLink": "#appointment",
+        "secondaryButtonText": "Learn More",
+        "secondaryButtonLink": "#about",
+        "backgroundImage": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2000&auto=format&fit=crop",
+        "stats": {
+          "patients": 10000,
+          "experience": 15
+        }
+      },
+      "about": {
+        "history": "Established in 2011, Eye Specialist Center started as a small clinic with the goal of providing affordable eye care. Now, after 15 years of service, we have grown into a full-fledged eye specialist hospital equipped with advanced surgical and diagnostic facilities.",
+        "mission": "To provide accessible, high-quality eye care services to all segments of society, utilizing cutting-edge technology and compassionate care.",
+        "vision": "To be the leading eye care provider in the region, known for excellence in patient care, innovation, and community outreach.",
+        "accreditation": "Licensed by Ministry of Health Malaysia, ISO 9001:2015 Certified, Member of Malaysian Medical Association.",
+        "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop",
+        "directorName": "Dr. Ahmad Faisal",
+        "directorTitle": "Chief Medical Director"
+      },
+      "doctors": [
+        {
+          "id": "1",
+          "name": "Dr. Liyana Zulkifli",
+          "specialty": "Cataract & Lasik Surgery Specialist",
+          "qualifications": "MD (UKM), MS Ophth (Mal)",
+          "experience": 12,
+          "image": "https://images.unsplash.com/photo-1594824436998-d0832f0c2420?q=80&w=600&auto=format&fit=crop",
+          "bio": "Dr. Liyana specializes in cataract surgery and LASIK procedures with over 12 years of experience.",
+          "isActive": true
+        },
+        {
+          "id": "2",
+          "name": "Dr. Rajesh Kumar",
+          "specialty": "Glaucoma & Neuro-Ophthalmology Specialist",
+          "qualifications": "MBBS (UM), FRCS (Edin)",
+          "experience": 18,
+          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600&auto=format&fit=crop",
+          "bio": "Dr. Rajesh is an expert in glaucoma management and neuro-ophthalmology conditions.",
+          "isActive": true
+        },
+        {
+          "id": "3",
+          "name": "Dr. Sarah Mei",
+          "specialty": "Pediatric Ophthalmology Specialist",
+          "qualifications": "MD (USM), Fellowship in Paed Ophth",
+          "experience": 10,
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop",
+          "bio": "Dr. Sarah specializes in children's eye care and strabismus treatment.",
+          "isActive": true
+        },
+        {
+          "id": "4",
+          "name": "Dr. Imran Shafiq",
+          "specialty": "Retina & Macula Specialist",
+          "qualifications": "MBBS (Monash), MS Ophth",
+          "experience": 15,
+          "image": "https://images.unsplash.com/photo-1612349317150-e410f624c427?q=80&w=600&auto=format&fit=crop",
+          "bio": "Dr. Imran is a retina specialist with expertise in diabetic retinopathy and macular degeneration.",
+          "isActive": true
+        }
+      ],
+      "services": [
+        {
+          "id": "1",
+          "title": "Lasik Surgery",
+          "description": "Advanced laser vision correction for freedom from glasses and contact lenses.",
+          "icon": "Eye",
+          "image": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Blade-free technology",
+            "Quick recovery",
+            "Lifetime warranty"
+          ],
+          "isActive": true,
+          "order": 1
+        },
+        {
+          "id": "2",
+          "title": "Cataract Surgery",
+          "description": "Modern cataract removal with premium lens implantation options.",
+          "icon": "Sparkles",
+          "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Phacoemulsification",
+            "Premium IOLs",
+            "Day surgery"
+          ],
+          "isActive": true,
+          "order": 2
+        },
+        {
+          "id": "3",
+          "title": "Glaucoma Treatment",
+          "description": "Comprehensive glaucoma diagnosis and management services.",
+          "icon": "Activity",
+          "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Early detection",
+            "Laser treatment",
+            "Surgical options"
+          ],
+          "isActive": true,
+          "order": 3
+        },
+        {
+          "id": "4",
+          "title": "Pediatric Eye Care",
+          "description": "Specialized eye care for infants, children, and teenagers.",
+          "icon": "Baby",
+          "image": "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Lazy eye treatment",
+            "Vision therapy",
+            "School screenings"
+          ],
+          "isActive": true,
+          "order": 4
+        },
+        {
+          "id": "5",
+          "title": "Retina Services",
+          "description": "Expert care for retinal conditions and macular diseases.",
+          "icon": "Scan",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Retinal imaging",
+            "Intravitreal injections",
+            "Retinal surgery"
+          ],
+          "isActive": true,
+          "order": 5
+        },
+        {
+          "id": "6",
+          "title": "General Eye Check-up",
+          "description": "Comprehensive eye examinations for overall eye health assessment.",
+          "icon": "Stethoscope",
+          "image": "https://images.unsplash.com/photo-1589820760086-1eb8a55ed93d?q=80&w=800&auto=format&fit=crop",
+          "features": [
+            "Full eye exam",
+            "Prescription update",
+            "Eye health screening"
+          ],
+          "isActive": true,
+          "order": 6
+        }
+      ],
+      "promotions": [
+        {
+          "id": "1",
+          "title": "CNY Special: 20% Off Lasik",
+          "description": "Celebrate Chinese New Year with clearer vision! Get 20% off LASIK surgery throughout February 2026.",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+          "discount": "20%",
+          "validUntil": "2026-02-28",
+          "isActive": true
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "name": "Mohd Fadzil",
+          "rating": 5,
+          "text": "Very successful Lasik surgery. The treatment from the doctors and nurses was very satisfactory from the first day of consultation until the surgery was completed. My vision is now 20/20 clear!",
+          "date": "14 Feb 2026",
+          "isActive": true
+        },
+        {
+          "id": "2",
+          "name": "Siti Aminah",
+          "rating": 5,
+          "text": "Brought my mother for cataract treatment. The doctor explained the process very clearly and calmed my mother who was initially scared. The process was fast and painless. Thank you Eye Specialist Center.",
+          "date": "10 Feb 2026",
+          "isActive": true
+        },
+        {
+          "id": "3",
+          "name": "Ahmad Razak",
+          "rating": 5,
+          "text": "Professional service and modern equipment. I had a glaucoma screening done here. The doctor was very patient in explaining the condition and treatment options available.",
+          "date": "28 Jan 2026",
+          "isActive": true
+        }
+      ],
+      "contact": {
+        "phone": "+60 3-1234 5678",
+        "whatsapp": "+60 12-345 6789",
+        "email": "info@eyespecialist.com",
+        "address": "Level 5, Specialist Medical Centre, Jalan Medical 1, 50000 Kuala Lumpur, Malaysia",
+        "operatingHours": {
+          "weekdays": "9:00 AM - 6:00 PM",
+          "weekends": "9:00 AM - 1:00 PM"
+        },
+        "socialMedia": {
+          "instagram": "https://instagram.com/eyespecialist",
+          "facebook": "https://facebook.com/eyespecialist",
+          "tiktok": "https://tiktok.com/@eyespecialist"
+        }
+      },
+      "brandName": "MESRC"
+    },
+    "image": "/uploads/image-1773103886491-o5qemc.jpeg",
+    "message": "The first concept of MESRC is to provide excellent medical treatment for the eye, bringing the treatment to the patients and developing MESRC into a one-stop centre. Once fully established, MESRC aims to provide 80-95% of the needed eye treatment. In cases where the patient's condition requires further intervention at other institutions, MESRC will provide appropriate assistance.",
+    "name": "AHMAD SYAZRIMAN ABDULLAH BIN AZLAN",
+    "title": "CHEIF EXECUTIVE OFFICER (MELAKA EYE SPECIALIST & REFRACTIVE CENTRE)",
+    "imagePosition": "51% 15%",
+    "imageScale": 1.22
+  },
+  "doctors": [
+    {
+      "id": "1",
+      "name": "COL. (B) DATIN DR. NOR AISHAH BINTI HJ. MALEK",
+      "specialty": "Ophthalmology Specialist  ",
+      "qualifications": "MD (UKM), MS Ophth (Mal)",
+      "experience": 15,
+      "image": "/uploads/image-1773797358050-5wnnxa.png",
+      "bio": "Dr. Liyana specializes in cataract surgery and LASIK procedures with over 12 years of experience.",
+      "isActive": true
+    },
+    {
+      "id": "1773803873178",
+      "name": "DR. ANUSIAH K. SELVATHURAI",
+      "specialty": "CONSULTANT OPHTALMOLOGIST",
+      "qualifications": "MBBS (INDIA), MS OPHTAL (UKM), AM (MAL), BKT VITREORETINAL TRAINING (USA)",
+      "experience": 30,
+      "image": "/uploads/image-1773803854143-tp4iei.jpeg",
+      "bio": "",
+      "isActive": true
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Cataract Surgery",
+      "description": "A procedure to remove a clouded, natural eye lens and replace it with a clear artificial lens (Intraocular Lens or IOL).",
+      "icon": "Eye",
+      "image": "/uploads/image-1774486821339-zogszt.png",
+      "features": [
+        "Blade-free technology",
+        "Quick recovery",
+        "Lifetime warranty"
+      ],
+      "isActive": true,
+      "order": 1,
+      "details": "Remove Cloudy eyes\nDay Care Surgery\n"
+    },
+    {
+      "id": "4",
+      "title": "IPCL Surgery",
+      "description": "IPCL (Implantable Phakic Contact Lens) surgery is a refractive procedure where a thin, flexible lens is surgically placed inside the eye to correct vision",
+      "icon": "Baby",
+      "image": "/uploads/image-1774486837811-pccjzx.png",
+      "features": [
+        "Lazy eye treatment",
+        "Vision therapy",
+        "School screenings"
+      ],
+      "isActive": true,
+      "order": 4,
+      "details": "Free from glasess\nHD Vision\nDay Care Surgery"
+    },
+    {
+      "id": "6",
+      "title": "Periodic Eye Check Up",
+      "description": "A comprehensive series of tests to evaluate your vision . Suggested a frequent exams if you wear contact lenses, have diabetes, high blood pressure, or a family history of eye disease",
+      "icon": "Stethoscope",
+      "image": "/uploads/image-1774488395658-15smdm.png",
+      "features": [
+        "Full eye exam",
+        "Prescription update",
+        "Eye health screening"
+      ],
+      "isActive": true,
+      "order": 6,
+      "details": "Visual Acuity\nSlit-Lamp Examination\nEye Pressure Test \nConsultation "
+    },
+    {
+      "id": "1771981967827",
+      "title": "Pterygium Surgery",
+      "description": "A procedure to remove a noncancerous, fleshy growth from the surface of the eye.  This growth typically develops due to long-term exposure to UV light, wind, or dust.",
+      "details": "Remove growth tissues\nDay Care Surgery",
+      "price": "",
+      "icon": "Activity",
+      "image": "/uploads/image-1774487026143-tg5xlb.jpg",
+      "features": [],
+      "order": 4,
+      "isActive": true
+    }
+  ],
+  "promotions": [
+    {
+      "id": "1771984510195",
+      "title": "First",
+      "description": "TRY \nFIRST TRY",
+      "image": "/uploads/image-1771984427205-l6dlvl.jpg",
+      "whatsappMessage": "Hi, I'm interested in this promotion.",
+      "startDate": "2026-02-24T16:00:00.604Z",
+      "endDate": "2026-03-30T16:00:00.000Z",
+      "isActive": true,
+      "tags": [],
+      "imagePosition": "53% 42%",
+      "imageScale": 1.34
+    }
+  ],
+  "reviews": [],
+  "gallery": {
+    "posts": [],
+    "settings": {
+      "subtitle": "Follow Us",
+      "title": "Connect With Us On Social Media",
+      "description": "Stay updated with our latest news, health tips, and promotions. Follow us on TikTok, Instagram & Facebook!",
+      "elfsightWidgetId": "bcd7384a-8326-437c-b98e-fffba2bf9a05",
+      "tiktokUrl": "https://www.tiktok.com/@pusatpakarmatamesrc",
+      "instagramUrl": "https://www.instagram.com/pusatpakarmatamesrc",
+      "facebookUrl": "https://www.facebook.com/pusatpakarmatamesrc"
+    }
+  },
+  "contact": {
+    "phone": "06-286 9016",
+    "whatsapp": "+60 12-345 6789",
+    "email": "marketing@mesrc.com.my",
+    "address": "Level 5, Specialist Medical Centre, Jalan Medical 1, 50000 Kuala Lumpur, Malaysia",
+    "operatingHours": {
+      "weekdays": "9:00 AM - 6:00 PM",
+      "weekends": "9:00 AM - 1:00 PM"
+    },
+    "socialMedia": {
+      "instagram": "https://instagram.com/eyespecialist",
+      "facebook": "https://facebook.com/eyespecialist",
+      "tiktok": "https://tiktok.com/@eyespecialist"
+    },
+    "whatsappNumber": "+601160663631",
+    "weeklyHours": {
+      "monday": {
+        "isOpen": true,
+        "openTime": "09:00 AM",
+        "closeTime": "06:00 PM"
+      },
+      "tuesday": {
+        "isOpen": true,
+        "openTime": "09:00 AM",
+        "closeTime": "06:00 PM"
+      },
+      "wednesday": {
+        "isOpen": true,
+        "openTime": "09:00 AM",
+        "closeTime": "06:00 PM"
+      },
+      "thursday": {
+        "isOpen": true,
+        "openTime": "09:00 AM",
+        "closeTime": "06:00 PM"
+      },
+      "friday": {
+        "isOpen": false,
+        "openTime": "09:00 AM",
+        "closeTime": "06:00 PM"
+      },
+      "saturday": {
+        "isOpen": false,
+        "openTime": "09:00 AM",
+        "closeTime": "01:00 PM"
+      },
+      "sunday": {
+        "isOpen": false
+      }
+    },
+    "hotlineNumber": "06-286 9016",
+    "googleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4609.784894911798!2d102.2611645755872!3d2.2136123977668283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1efd2feb95837%3A0xb1037d478b7653c5!2sMelaka%20Eye%20Specialist%20And%20Refractive%20Centre!5e1!3m2!1sen!2smy!4v1772671868994!5m2!1sen!2smy",
+    "locationName": "Melaka Eye Specialist And Refractive Centre",
+    "locationAddress": "No 27, Jalan KPAA 1, Kompleks Perniagaan Al-azim, 75150 Bukit Baru, Melaka"
+  },
+  "navbar": {
+    "brandName": "MESRC",
+    "logoUrl": "/uploads/image-1772850054428-507x75.jpg",
+    "footerBrandName": "Melaka Eye Specialist And Refractive Centre",
+    "footerDescription": "Eye Specialist Center is the leading eye care center in Malaysia providing comprehensive eye care services.",
+    "copyrightText": "© 2009 Melaka Eye Specialist And Refractive Centre. All rights reserved."
+  },
+  "videoShowcase": {
+    "title": "Video",
+    "subtitle": "Our Youtube",
+    "description": "Mari lihat Video Dari Kami",
+    "videoIds": [
+      "3XwvA5OWl2s",
+      "_jqcP8zk5bk",
+      "-tRuBP_oiAA",
+      "R-Q4hr_mang",
+      "z1tRFJL_8Aw",
+      "bNH-IvUtyZE",
+      "lNYqVj7E0q8",
+      "pvTqTRMgMYw",
+      "WLoUHKJ9rw0",
+      "FGI6d9iHX7E",
+      "lRL8z7ZkEFM",
+      "t-ov5maqfhM",
+      "FgqYR54CrTY",
+      "7UA48dV5hkA",
+      "k5T_Zy5Gy44",
+      "CinOD3SIHzE",
+      "qg31D0Pw-Q0",
+      "v96K6q5OaZQ",
+      "ot74vwtfBOk",
+      "vZ5bClW9MZE",
+      "HrbdMf09kF0",
+      "UxM1CY39EAs",
+      "Vgbo1ROqbEU",
+      "C_76ANF0EVc",
+      "rfiWrQGypQE",
+      "mGCtGo8FT6s",
+      "vfqBtyomesk",
+      "hSQl4nOw0IE",
+      "hVQgFwkTheQ",
+      "vD-g-8o7AcI",
+      "TraZHI7j19I",
+      "blSW6AEbx0M",
+      "GG6G1_GvAd4",
+      "_Zg2JDOAOgs",
+      "Qrvm0ZtJ4vw",
+      "E_LAfiA8uWc",
+      "BAf-ghVXGbg",
+      "nMS1b_wk7VI",
+      "jJCjaLVK9iM",
+      "l2uex7MT9KQ",
+      "erZnnlf6adk",
+      "BIp2LcLH-Jg",
+      "f2ptRUTYZIo",
+      "klqSGupySXU",
+      "nVGHOoZVnX0",
+      "RoZaZVXX6vk",
+      "zmv_KYJsnIg",
+      "0MBtRXpFow8",
+      "HYRMiXU4ej8",
+      "q4l1dypJmzs"
+    ],
+    "youtubeProfileUrl": "https://www.youtube.com/@pusatpakarmatamesrc9805",
+    "youtubeApiKey": "AIzaSyD4R32SK4CSEz1ObQOQkPJuIZDd_7uyoHo",
+    "thumbnailUrl": "https://img.youtube.com/vi/3XwvA5OWl2s/maxresdefault.jpg",
+    "autoPlay": true,
+    "isActive": true
+  },
+  "adminAuth": {
+    "id": "admin-1",
+    "name": "Admin",
+    "email": "support@mesrc.com.my",
+    "role": "admin",
+    "passwordHash": "$2b$10$FjG2TYBePs3wNWsdKQO4m.uW06heQ7FsqJAU8K4ZaqksEHfRO543m"
+  }
+}

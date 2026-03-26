@@ -78,6 +78,9 @@ export default function ContactAdminPage() {
             if (data.data) {
                 // Ensure weeklyHours has default structure if not present
                 const loadedSettings = data.data;
+                if (!loadedSettings.hotlineNumber && loadedSettings.phone) {
+                    loadedSettings.hotlineNumber = loadedSettings.phone;
+                }
                 if (!loadedSettings.weeklyHours) {
                     loadedSettings.weeklyHours = initialSettings.weeklyHours;
                 }
@@ -95,18 +98,38 @@ export default function ContactAdminPage() {
         
         setIsFetchingLocation(true);
         try {
-            // Extract place ID or coordinates from URL
-            // For demo, we'll use a simple parsing approach
-            const url = new URL(settings.googleMapsUrl);
-            const params = new URLSearchParams(url.search);
+            const parseMapsInput = (input: string) => {
+                const trimmed = input.trim();
+
+                // Support pasted full iframe HTML by extracting src="..."
+                const iframeSrcMatch = trimmed.match(/src=["']([^"']+)["']/i);
+                const mapsUrl = iframeSrcMatch?.[1] ?? trimmed;
+
+                const url = new URL(mapsUrl);
+                const params = new URLSearchParams(url.search);
+
+                const fromQuery = params.get("query") || params.get("q");
+                const fromEmbedPb = params.get("pb")?.match(/!2s([^!]+)/)?.[1];
+                const placeName = decodeURIComponent(fromQuery || fromEmbedPb || "").replace(/\+/g, " ").trim();
+                const address = decodeURIComponent(params.get("q") || "").replace(/\+/g, " ").trim();
+
+                return {
+                    mapsUrl,
+                    placeName,
+                    address,
+                };
+            };
+
+            const parsed = parseMapsInput(settings.googleMapsUrl);
             
-            // Try to get place name and address from Google Places API
-            // Note: In production, you'd need a backend proxy with API key
-            const placeName = params.get("query") || "KL Eye Medical Tower";
-            const address = params.get("q") || "Level 4, Cemerlang Building, 123 Jalan Ampang, 50450 Kuala Lumpur";
+            // Keep existing values when parser cannot extract full details.
+            // Embedded map URLs often don't contain full postal address.
+            const placeName = parsed.placeName || settings.locationName || "KL Eye Medical Tower";
+            const address = parsed.address || settings.locationAddress || "";
             
             setSettings({
                 ...settings,
+                googleMapsUrl: parsed.mapsUrl,
                 locationName: placeName,
                 locationAddress: address,
             });
@@ -138,10 +161,16 @@ export default function ContactAdminPage() {
         setMessage({ type: "", text: "" });
 
         try {
+            const payload = {
+                ...settings,
+                // Keep legacy "phone" field in sync while admin edits hotline only.
+                phone: settings.hotlineNumber || settings.phone,
+            };
+
             const res = await fetch("/api/data?section=contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(settings),
+                body: JSON.stringify(payload),
             });
             const data = await res.json();
 
@@ -198,12 +227,6 @@ export default function ContactAdminPage() {
                 <div className="lg:col-span-1 bg-white rounded-2xl p-6 shadow-sm border border-slate-100 space-y-4">
                     <h2 className="text-lg font-bold text-slate-900">Contact Info</h2>
                     <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">Phone</label>
-                        <input type="text" value={settings.phone || ""}
-                            onChange={(e) => setSettings({ ...settings, phone: e.target.value })}
-                            className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    </div>
-                    <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
                         <input type="email" value={settings.email || ""}
                             onChange={(e) => setSettings({ ...settings, email: e.target.value })}
@@ -218,8 +241,8 @@ export default function ContactAdminPage() {
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">Hotline Number</label>
-                        <input type="text" value={settings.hotlineNumber || ""}
-                            onChange={(e) => setSettings({ ...settings, hotlineNumber: e.target.value })}
+                        <input type="text" value={settings.hotlineNumber || settings.phone || ""}
+                            onChange={(e) => setSettings({ ...settings, hotlineNumber: e.target.value, phone: e.target.value })}
                             className="w-full border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="+60 3-1234 5678" />
                     </div>

@@ -1,6 +1,25 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "NODE_ENV",
+    "FRONTEND_PORT",
+    "BACKEND_PORT",
+    "NEXT_PUBLIC_APP_URL",
+    "NEXT_PUBLIC_BACKEND_URL",
+    "DATABASE_URL",
+    "DATABASE_URL_TEST",
+    "JWT_SECRET",
+    "INSTAGRAM_APP_ID",
+    "INSTAGRAM_APP_SECRET",
+    "INSTAGRAM_REDIRECT_URI",
+    "FACEBOOK_APP_ID",
+    "FACEBOOK_APP_SECRET",
+    "FACEBOOK_REDIRECT_URI",
+    "TIKTOK_CLIENT_KEY",
+    "TIKTOK_CLIENT_SECRET",
+    "TIKTOK_REDIRECT_URI"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -14,6 +33,12 @@
       "dependsOn": ["^check-types"]
     },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "cache": false,
       "persistent": true
     }

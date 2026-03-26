@@ -30,13 +30,14 @@ const parseValue = (val: string): { hour: number; minute: number; ampm: "AM" | "
     const parts = val.trim().split(" ");
     if (parts.length < 2) return { hour: 9, minute: 0, ampm: "AM" };
 
-    const [time, ampm] = parts;
+    const time = parts[0] || "";
+    const ampm = parts[1] || "AM";
     const timeParts = time.split(":");
 
     if (timeParts.length !== 2) return { hour: 9, minute: 0, ampm: "AM" };
 
-    const hour = parseInt(timeParts[0], 10);
-    const minute = parseInt(timeParts[1], 10);
+    const hour = parseInt(timeParts[0] ?? "9", 10);
+    const minute = parseInt(timeParts[1] ?? "0", 10);
 
     // Validate values
     if (isNaN(hour) || isNaN(minute)) return { hour: 9, minute: 0, ampm: "AM" };

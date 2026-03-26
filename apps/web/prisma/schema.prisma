@@ -1,0 +1,171 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// Admin users for the admin panel
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // hashed password
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Site-wide settings (single row)
+model SiteSettings {
+  id                String   @id @default(cuid())
+  
+  // Hero Section
+  heroTitle         String?
+  heroSubtitle      String?
+  heroDescription   String?
+  heroBadgeText     String?
+  heroBackgroundImage String?
+  
+  // Stats
+  patientsCount     Int?
+  yearsExperience   Int?
+  
+  // Contact
+  phone             String?
+  email             String?
+  address           String?
+  whatsappNumber    String?
+  
+  // Social Media
+  facebookUrl       String?
+  instagramUrl      String?
+  tiktokUrl         String?
+  youtubeUrl        String?
+  
+  // Footer
+  footerDescription String?
+  copyrightText     String?
+  
+  // Logo
+  logoUrl           String?
+  
+  // About Section
+  aboutTitle        String?
+  aboutSubtitle     String?
+  aboutDescription  String?
+  aboutImage        String?
+  directorName      String?
+  directorTitle     String?
+  
+  // CEO Message
+  ceoMessage        String?
+  ceoName           String?
+  ceoImage          String?
+  
+  updatedAt DateTime @updatedAt
+}
+
+// Doctors/Specialists
+model Doctor {
+  id          String   @id @default(cuid())
+  name        String
+  specialty   String
+  image       String?
+  description String?
+  qualifications String?
+  experience  String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Services offered
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  icon        String?
+  features    String?  // JSON string for features list
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Promotions
+model Promotion {
+  id          String   @id @default(cuid())
+  title       String
+  discount    String?
+  description String?
+  image       String?
+  tags        String?  // JSON string for tags
+  endDate     DateTime?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Customer Reviews
+model Review {
+  id        String   @id @default(cuid())
+  name      String
+  rating    Int
+  text      String
+  date      String
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Social Media Gallery Posts
+model GalleryPost {
+  id          String   @id @default(cuid())
+  platform    String   // instagram, tiktok, facebook
+  type        String   // image, video
+  image       String?
+  thumbnail   String?
+  caption     String?
+  link        String?
+  likes       Int?
+  views       String?
+  comments    Int?
+  shares      Int?
+  date        String?
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Clinic Locations
+model Location {
+  id          String   @id @default(cuid())
+  name        String
+  address     String
+  phone       String?
+  hours       String?
+  embedUrl    String?  // Google Maps embed URL
+  isMain      Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Video Showcase
+model VideoShowcase {
+  id          String   @id @default(cuid())
+  title       String?
+  description String?
+  youtubeId   String?
+  thumbnail   String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

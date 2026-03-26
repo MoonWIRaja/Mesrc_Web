@@ -1,0 +1,320 @@
+import {
+    DEFAULT_IMAGE_BLUR,
+    DEFAULT_IMAGE_OPACITY,
+    DEFAULT_IMAGE_POSITION,
+    DEFAULT_IMAGE_SCALE,
+} from "@/lib/image-position";
+
+export const DEFAULT_HERO_DATA = {
+    title: "Melaka Eye Specialist",
+    subtitle: "& Refractive Centre",
+    description:
+        "An ophthalmology specialist centre that offers a wide range of diagnostic services and treatments for vision-related problems. We provide comprehensive eye examinations, treatment for various eye diseases, and refractive procedures. With a professional approach and modern equipment, the centre aims to help patients improve their vision quality and ensure their eye health remains at its best.\n",
+    badge: "MESRC",
+    primaryButtonText: "Book Appointment",
+    primaryButtonLink: "#appointment",
+    secondaryButtonText: "Learn More",
+    secondaryButtonLink: "#about",
+    backgroundImage: "/uploads/image-1772846970814-obh67z.png",
+    imagePosition: DEFAULT_IMAGE_POSITION,
+    imageScale: DEFAULT_IMAGE_SCALE,
+    imageOpacity: DEFAULT_IMAGE_OPACITY,
+    imageBlur: DEFAULT_IMAGE_BLUR,
+    stats: {
+        patients: 20000,
+        experience: 16,
+    },
+};
+
+export const DEFAULT_ABOUT_DATA = {
+    badge: "Get to Know Us",
+    title: "Melaka Eye Specialist And Refractive Centre",
+    titleMain: "Melaka Eye Specialist",
+    titleSub: "& Refractive Centre",
+    titleMainColor: "#000000",
+    titleSubColor: "#2563eb",
+    history:
+        "Melaka Eye Specialist & Refractive Centre (MESRC) is the primary activity of Kayangan Bumi Medical Sdn Bhd (KBMSB), which it was set-up by its founder to provide medical related services. The company was officially registered on December 22, 2009. KBMSB planned for MESRC to be a one-stop centre offering comprehensive medical treatment for eye and visual problems. MESRC became operational in April, 2011.",
+    mission:
+        "1.To provide quality and comprehensive medical services for eye treatment and visual rehabilitation.\n2.To become the preferred eye treatment and refractive center for the community through appropriate marketing and patient services.\n3.To offer 24-hour services that enable patients to recover from treatment as soon as possible.",
+    vision:
+        "To provide a centre exclusively for patients with eye problems; available at all times; easily accessible to the community; with reasonable fees. It shall provide safe and skilful medical services with high level of efficiency.",
+    accreditation: "Licensed by Ministry of Health Malaysia, ISO 9001:2015 Certified, Member of Malaysian Medical Association.",
+    accreditationItems: [
+        {
+            title: "Ambulatory Care Centre with Kementerian Kesihatan Malaysia (KKM)",
+            subtitle: "Since 2009",
+            icon: "award",
+        },
+        {
+            title: "With SSM",
+            subtitle: "Malaysia Standards",
+            icon: "shield",
+        },
+    ],
+    image: "/uploads/image-1772847881047-a58j9z.png",
+    imagePosition: DEFAULT_IMAGE_POSITION,
+    imageScale: DEFAULT_IMAGE_SCALE,
+    imageOpacity: DEFAULT_IMAGE_OPACITY,
+    imageBlur: DEFAULT_IMAGE_BLUR,
+    directorName: "KOL (B) DATIN DR. NOR AISHAH BINTI HJ. MALEK",
+    directorTitle: "FOUNDER",
+};
+
+export const DEFAULT_CEO_MESSAGE_DATA = {
+    image: "/uploads/image-1773103886491-o5qemc.jpeg",
+    imagePosition: DEFAULT_IMAGE_POSITION,
+    imageScale: DEFAULT_IMAGE_SCALE,
+    imageOpacity: DEFAULT_IMAGE_OPACITY,
+    imageBlur: DEFAULT_IMAGE_BLUR,
+    message:
+        "The first concept of MESRC is to provide excellent medical treatment for the eye, bringing the treatment to the patients and developing MESRC into a one-stop centre. Once fully established, MESRC aims to provide 80-95% of the needed eye treatment. In cases where the patient's condition requires further intervention at other institutions, MESRC will provide appropriate assistance.",
+    name: "AHMAD SYAZRIMAN ABDULLAH BIN AZLAN",
+    title: "CHEIF EXECUTIVE OFFICER (MELAKA EYE SPECIALIST & REFRACTIVE CENTRE)",
+};
+
+export const DEFAULT_DOCTORS = [
+    {
+        id: "1",
+        name: "COL. (B) DATIN DR. NOR AISHAH BINTI HJ. MALEK",
+        specialty: "Ophthalmology Specialist  ",
+        qualifications: "MD (UKM), MS Ophth (Mal)",
+        experience: 15,
+        image: "/uploads/image-1773797358050-5wnnxa.png",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        bio: "Dr. Liyana specializes in cataract surgery and LASIK procedures with over 12 years of experience.",
+        isActive: true,
+    },
+    {
+        id: "1773803873178",
+        name: "DR. ANUSIAH K. SELVATHURAI",
+        specialty: "CONSULTANT OPHTALMOLOGIST",
+        qualifications: "MBBS (INDIA), MS OPHTAL (UKM), AM (MAL), BKT VITREORETINAL TRAINING (USA)",
+        experience: 30,
+        image: "/uploads/image-1773803854143-tp4iei.jpeg",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        bio: "",
+        isActive: true,
+    },
+];
+
+export const DEFAULT_SERVICES = [
+    {
+        id: "1",
+        title: "Cataract Surgery",
+        description: "A procedure to remove a clouded, natural eye lens and replace it with a clear artificial lens (Intraocular Lens or IOL).",
+        details: "Remove Cloudy eyes\nDay Care Surgery\n",
+        price: "",
+        icon: "Eye",
+        image: "/uploads/image-1774486821339-zogszt.png",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        features: ["Blade-free technology", "Quick recovery", "Lifetime warranty"],
+        isActive: true,
+        order: 1,
+    },
+    {
+        id: "4",
+        title: "IPCL Surgery",
+        description:
+            "IPCL (Implantable Phakic Contact Lens) surgery is a refractive procedure where a thin, flexible lens is surgically placed inside the eye to correct vision",
+        details: "Free from glasess\nHD Vision\nDay Care Surgery",
+        price: "",
+        icon: "Baby",
+        image: "/uploads/image-1774486837811-pccjzx.png",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        features: ["Lazy eye treatment", "Vision therapy", "School screenings"],
+        isActive: true,
+        order: 4,
+    },
+    {
+        id: "6",
+        title: "Periodic Eye Check Up",
+        description:
+            "A comprehensive series of tests to evaluate your vision . Suggested a frequent exams if you wear contact lenses, have diabetes, high blood pressure, or a family history of eye disease",
+        details: "Visual Acuity\nSlit-Lamp Examination\nEye Pressure Test \nConsultation ",
+        price: "",
+        icon: "Stethoscope",
+        image: "/uploads/image-1774488395658-15smdm.png",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        features: ["Full eye exam", "Prescription update", "Eye health screening"],
+        isActive: true,
+        order: 6,
+    },
+    {
+        id: "1771981967827",
+        title: "Pterygium Surgery",
+        description:
+            "A procedure to remove a noncancerous, fleshy growth from the surface of the eye.  This growth typically develops due to long-term exposure to UV light, wind, or dust.",
+        details: "Remove growth tissues\nDay Care Surgery",
+        price: "",
+        icon: "Activity",
+        image: "/uploads/image-1774487026143-tg5xlb.jpg",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        features: [],
+        isActive: true,
+        order: 4,
+    },
+];
+
+export const DEFAULT_PROMOTIONS = [
+    {
+        id: "1771984510195",
+        title: "First",
+        description: "TRY \nFIRST TRY",
+        image: "/uploads/image-1771984427205-l6dlvl.jpg",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        discount: "",
+        tags: [],
+        whatsappMessage: "Hi, I'm interested in this promotion.",
+        startDate: "2026-02-24T16:00:00.604Z",
+        endDate: "2026-03-30T16:00:00.000Z",
+        isActive: true,
+    },
+    {
+        id: "1771984766062",
+        title: "Dua",
+        description: "Dua \nItik BurHan",
+        image: "/uploads/image-1771984732149-ez3mrd.jpg",
+        imagePosition: DEFAULT_IMAGE_POSITION,
+        imageScale: DEFAULT_IMAGE_SCALE,
+        imageOpacity: DEFAULT_IMAGE_OPACITY,
+        imageBlur: DEFAULT_IMAGE_BLUR,
+        discount: "",
+        tags: [],
+        whatsappMessage: "Hi, I'm interested in this promotion.",
+        startDate: "2026-02-24T16:00:00.900Z",
+        endDate: "2026-03-14T16:00:00.000Z",
+        isActive: true,
+    },
+];
+
+export const DEFAULT_REVIEWS = [];
+
+export const DEFAULT_REVIEWS_SETTINGS = {
+    subtitle: "Customer Reviews",
+    title: "What Our Patients Say",
+    description: "Patient satisfaction is our greatest achievement. Read some of their experiences undergoing treatment at Eye Specialist Center.",
+};
+
+export const DEFAULT_GALLERY_SETTINGS = {
+    subtitle: "Follow Us",
+    title: "Connect With Us On Social Media",
+    description: "Stay updated with our latest news, health tips, and promotions. Follow us on TikTok, Instagram & Facebook!",
+    elfsightWidgetId: "bcd7384a-8326-437c-b98e-fffba2bf9a05",
+    tiktokUrl: "https://www.tiktok.com/@pusatpakarmatamesrc",
+    instagramUrl: "https://www.instagram.com/pusatpakarmatamesrc",
+    facebookUrl: "https://www.facebook.com/pusatpakarmatamesrc",
+};
+
+export const DEFAULT_GALLERY_DATA = {
+    posts: [],
+    settings: DEFAULT_GALLERY_SETTINGS,
+};
+
+export const DEFAULT_CONTACT_DATA = {
+    phone: "06-286 9016",
+    whatsapp: "+60 12-345 6789",
+    email: "marketing@mesrc.com.my",
+    address: "Level 5, Specialist Medical Centre, Jalan Medical 1, 50000 Kuala Lumpur, Malaysia",
+    operatingHours: {
+        weekdays: "9:00 AM - 6:00 PM",
+        weekends: "9:00 AM - 1:00 PM",
+    },
+    socialMedia: {
+        instagram: "https://instagram.com/eyespecialist",
+        facebook: "https://facebook.com/eyespecialist",
+        tiktok: "https://tiktok.com/@eyespecialist",
+    },
+};
+
+export const DEFAULT_NAVBAR_SETTINGS = {
+    brandName: "MESRC",
+    logoUrl: "/uploads/image-1772850054428-507x75.jpg",
+    footerBrandName: "Melaka Eye Specialist And Refractive Centre",
+    footerDescription: "Eye Specialist Center is the leading eye care center in Malaysia providing comprehensive eye care services.",
+    copyrightText: "© 2009 Melaka Eye Specialist And Refractive Centre. All rights reserved.",
+};
+
+export const DEFAULT_VIDEO_SHOWCASE_DATA = {
+    title: "Video",
+    subtitle: "Our Youtube",
+    description: "Mari lihat Video Dari Kami",
+    videoIds: [
+        "3XwvA5OWl2s",
+        "_jqcP8zk5bk",
+        "-tRuBP_oiAA",
+        "R-Q4hr_mang",
+        "z1tRFJL_8Aw",
+        "bNH-IvUtyZE",
+        "lNYqVj7E0q8",
+        "pvTqTRMgMYw",
+        "WLoUHKJ9rw0",
+        "FGI6d9iHX7E",
+        "lRL8z7ZkEFM",
+        "t-ov5maqfhM",
+        "FgqYR54CrTY",
+        "7UA48dV5hkA",
+        "k5T_Zy5Gy44",
+        "CinOD3SIHzE",
+        "qg31D0Pw-Q0",
+        "v96K6q5OaZQ",
+        "ot74vwtfBOk",
+        "vZ5bClW9MZE",
+        "HrbdMf09kF0",
+        "UxM1CY39EAs",
+        "Vgbo1ROqbEU",
+        "C_76ANF0EVc",
+        "rfiWrQGypQE",
+        "mGCtGo8FT6s",
+        "vfqBtyomesk",
+        "hSQl4nOw0IE",
+        "hVQgFwkTheQ",
+        "vD-g-8o7AcI",
+        "TraZHI7j19I",
+        "blSW6AEbx0M",
+        "GG6G1_GvAd4",
+        "_Zg2JDOAOgs",
+        "Qrvm0ZtJ4vw",
+        "E_LAfiA8uWc",
+        "BAf-ghVXGbg",
+        "nMS1b_wk7VI",
+        "jJCjaLVK9iM",
+        "l2uex7MT9KQ",
+        "erZnnlf6adk",
+        "BIp2LcLH-Jg",
+        "f2ptRUTYZIo",
+        "klqSGupySXU",
+        "nVGHOoZVnX0",
+        "RoZaZVXX6vk",
+        "zmv_KYJsnIg",
+        "0MBtRXpFow8",
+        "HYRMiXU4ej8",
+        "q4l1dypJmzs",
+    ],
+    youtubeProfileUrl: "https://www.youtube.com/@pusatpakarmatamesrc9805",
+    youtubeApiKey: "AIzaSyD4R32SK4CSEz1ObQOQkPJuIZDd_7uyoHo",
+    thumbnailUrl: "https://img.youtube.com/vi/3XwvA5OWl2s/maxresdefault.jpg",
+    autoPlay: true,
+    isActive: true,
+};

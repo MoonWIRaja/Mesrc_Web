@@ -4,11 +4,13 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "start": "dotenv -e .env -- turbo run start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "dotenv-cli": "^11.0.0",
     "prettier": "^3.7.4",
     "turbo": "^2.8.10",
     "typescript": "5.9.2"
@@ -20,5 +22,11 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "react-countup": "^6.5.3",
+    "react-datepicker": "^9.1.0",
+    "timescape": "^0.8.0"
+  }
 }
