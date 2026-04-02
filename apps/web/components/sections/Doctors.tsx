@@ -114,7 +114,7 @@ export function Doctors() {
                                         className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 sm:flex-row hover:shadow-xl"
                                     >
                                         {/* Image */}
-                                        <div className="relative h-64 shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:min-h-full sm:w-2/5">
+                                        <div className="relative h-96 shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:min-h-full sm:w-2/5">
                                             <img
                                                 src={doctor.image}
                                                 alt={doctor.name}
@@ -163,7 +163,7 @@ export function Doctors() {
                                                     </DialogHeader>
                                                     <div className="flex flex-col md:flex-row h-full max-h-[90vh]">
                                                         {/* Image Side */}
-                                                        <div className="w-full md:w-1/2 h-64 md:h-auto shrink-0 relative">
+                                                        <div className="relative h-80 w-full shrink-0 md:h-auto md:w-1/2">
                                                             <img
                                                                 src={doctor.image}
                                                                 alt={doctor.name}
