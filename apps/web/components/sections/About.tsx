@@ -121,7 +121,7 @@ export function About() {
                             {data.badge}
                         </Badge>
                         <h2
-                            className="text-3xl md:text-5xl font-normal text-slate-900 mb-6 leading-tight"
+                            className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight"
                             style={{ fontFamily: '"Times New Roman", Times, serif' }}
                         >
                             <span style={{ color: data.titleMainColor || '#000000' }}>{data.titleMain || "Melaka Eye"}</span> <br />

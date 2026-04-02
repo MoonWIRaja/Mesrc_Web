@@ -110,7 +110,7 @@ export function Footer() {
                             )}
                             <span
                                 className="text-xl tracking-tight text-white"
-                                style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 400 }}
+                                style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 700 }}
                             >
                                 {firstBrandWord} {restBrandName && <span className="text-blue-500">{restBrandName}</span>}
                             </span>

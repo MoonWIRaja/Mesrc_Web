@@ -167,7 +167,7 @@ export function Hero() {
                     {/* Heading */}
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl md:text-7xl lg:text-8xl font-normal text-white leading-tight mb-8 tracking-tight"
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-8 tracking-tight"
                         style={{ fontFamily: '"Times New Roman", Times, serif' }}
                     >
                         {heroData.title} <br />
