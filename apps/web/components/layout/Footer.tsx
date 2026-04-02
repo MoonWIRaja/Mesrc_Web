@@ -108,7 +108,10 @@ export function Footer() {
                                     <Eye size={24} />
                                 </div>
                             )}
-                            <span className="font-bold text-xl tracking-tight text-white">
+                            <span
+                                className="text-xl tracking-tight text-white"
+                                style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 400 }}
+                            >
                                 {firstBrandWord} {restBrandName && <span className="text-blue-500">{restBrandName}</span>}
                             </span>
                         </Link>
