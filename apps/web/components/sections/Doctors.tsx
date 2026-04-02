@@ -114,7 +114,7 @@ export function Doctors() {
                                         className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-all duration-300 sm:flex-row hover:shadow-xl"
                                     >
                                         {/* Image */}
-                                        <div className="relative h-96 shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:min-h-full sm:w-2/5">
+                                        <div className="relative h-[28rem] shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:min-h-full sm:w-2/5">
                                             <img
                                                 src={doctor.image}
                                                 alt={doctor.name}
