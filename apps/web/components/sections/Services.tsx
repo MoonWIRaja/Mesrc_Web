@@ -126,6 +126,9 @@ export function Services() {
                                                 src={service.image}
                                                 alt={service.title}
                                                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                                                onError={(e) => {
+                                                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1589820760086-1eb8a55ed93d?q=80&w=800&auto=format&fit=crop";
+                                                }}
                                                 style={resolveImagePresentationStyle({
                                                     imagePosition: service.imagePosition,
                                                     imageScale: service.imageScale,
@@ -159,6 +162,9 @@ export function Services() {
                                                                     src={service.image}
                                                                     alt={service.title}
                                                                     className="absolute inset-0 w-full h-full object-cover object-center"
+                                                                    onError={(e) => {
+                                                                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1589820760086-1eb8a55ed93d?q=80&w=800&auto=format&fit=crop";
+                                                                    }}
                                                                     style={resolveImagePresentationStyle({
                                                                         imagePosition: service.imagePosition,
                                                                         imageScale: service.imageScale,
